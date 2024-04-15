@@ -176,10 +176,15 @@
                     <p>GitHub: <a href="https://github.com/felip-araujo" target="_blank">Perfil no GitHub</a></p>
                 </div>
                 <div class="col">
-                    <form action="" class="">
-                        <p class="form-label">deixe sua menssagem</p>
+                    <form action="php/processar_contato.php" method="post" class="" >
+                        <h2 class="form-label text-center">Deixe sua mensagem</h2>
                         <label for="nome" class="form-label">Nome</label>
                         <input type="text" class="form-control" name="nome">
+                        <label for="nome" class="form-label">E-mail:</label>
+                        <input type="email" class="form-control" name="email">
+                        <label for="text" class="form-label">Deixe sua mensagem:</label>
+                        <input type="text" class="form-control" style="padding: 2rem;" name="text" id="text"> 
+                        <button type="submit" class="btn btn-primary" style="margin-top: .8rem;" name="enviar" id="enviar">Enviar</button>
                     </form>
                 </div>
             </div>
