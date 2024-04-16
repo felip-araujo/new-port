@@ -15,7 +15,6 @@
         if($sql->execute()){
             echo '<script>alert(" Mensagem enviada com sucesso ")</script>' ;
             echo '<script>window.location.href="../index.html"</script>' ;
-            
         } else {
             echo " Erro ao enviar sua mensagem";
         }

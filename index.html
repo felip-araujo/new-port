@@ -25,14 +25,22 @@
         .icon {
             font-size: 24px;
             margin-right: 10px;
+        } 
+
+        @media screen and (max-width: 767px)  {
+            .img-fluid.rounded-circle{
+                
+            }
         }
+
+       
     </style>
 </head>
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" style="text-align: center;" href="#">Felipe Araujo</a>
+            <a class="navbar-brand" style="color:rgb(255, 187, 0); font-weight: 600;" href="#">Felipe Araujo</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -58,13 +66,11 @@
 
     <section id="sobre" class="container mt-5">
         <div class="row">
-            <div class="col-md-4" style="text-align: center;">
-                <img src="/assets/image/felipe-araujo2.jpeg" class="img-fluid rounded-circle"
-                    style="margin-top: 4rem; width: 80%; text-align: center; align-items: center; justify-content: center; margin-bottom: .5rem;"
-                    alt="Foto de perfil de Felipe Araujo">
+            <div class="col-md-4 d-flex align-items-center justify-content-center" style="text-align: center;">
+                <img src="/assets/image/felipe-araujo2.jpeg" class="img-fluid rounded-circle w-50 w-lg-100" id="" alt="Foto de perfil de Felipe Araujo">
             </div>
             <div class="col-md-8">
-                <h1 class="mb-3" style="font-weight: 600;">Sobre Mim</h1>
+                <h1 class="mb-3" style="font-weight: 300;">Sobre Mim</h1>
                 <p>Bem-vindo ao meu mundo digital, onde a linha de código é a minha tela em branco e a inovação é a
                     minha obra de arte.</p>
                 <p>Com 25 anos de idade e uma paixão incansável pela tecnologia, mergulhei de cabeça no universo do
@@ -76,20 +82,32 @@
                 <p>Dos contratos PJ que me levaram a colaborar com empresas de renome até o trabalho integral na criação
                     e manutenção do site da instituição onde no momento trabalho, cada projeto reflete minha dedicação e
                     habilidade em traduzir ideias em realidade digital.</p>
-                <div class="row">
-                    <h3 style="margin-top: .8rem;">Principais Habilidades</h3>
-                    <p class="col"><i class="fab fa-php icon" style="color:rgb(255, 187, 0)"></i> PHP</p>
-                    <p><i class="fab fa-js-square icon" style="color:rgb(255, 187, 0)"></i> JavaScript</p>
-                    <p><i class="fab fa-bootstrap icon" style="color:rgb(255, 187, 0)"></i> Bootstrap</p>
+
+                <button class="btn btn-primary">Ver mais</button>
+                <div class="row d-flex align-items-center justify-content-center"> 
+                    <h1 style="margin-top: 2rem; margin-bottom: 2rem; font-weight: 300;">Principais Habilidades</h1>
+                    <div class="col ">
+                        <p class="col"><i class="fab fa-php icon" style="color:rgb(255, 187, 0)"></i> PHP</p>
+                        <p><i class="fab fa-js-square icon" style="color:rgb(255, 187, 0)"></i> JavaScript</p>
+                    </div> 
+                    <div class="col">
+
+                        <p><i class="fab fa-bootstrap icon" style="color:rgb(255, 187, 0)"></i> Bootstrap</p> 
+                        <p><i class="fa-solid fa-database icon" style="color:rgb(255, 187, 0)"></i>MySQL</p>
+                    </div> 
+                    <div class="col">
+                        <p><i class="fa-brands fa-github icon" style="color:rgb(255, 187, 0)"></i>GitHub</p> 
+                        <p><i class="fa-solid fa-server icon" style="color:rgb(255, 187, 0)"></i>Servidores</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
     <section id="projetos" class="container mt-5 rounded" style="background-color: #00000079; padding: 3rem;">
-        <h1 class="mb-3" style="text-align: center;">Projetos</h1>
+        <h1 class="mb-3" style="text-align: center; font-weight: 300;">Projetos</h1>
         <p style="text-align: center;">Convido você a explorar uma seleção cuidadosamente curada dos meus trabalhos mais
-            significativos, que ilustram minha capacidade de inovar e excelência técnica em desenvolvimento de sistemas.
+            significativos.
         </p>
         <div class="row">
             <div class="col-md-4">
@@ -111,7 +129,7 @@
                 <div class="card bg-dark text-white mb-3">
                     <img src="/assets/image/Captura de tela 2024-04-15 132220.png" class="card-img-top" alt="Projeto 2">
                     <div class="card-body">
-                        <h5 class="card-title">Website Inspetoria Salesiana</h5>
+                        <h5 class="card-title">Website Inspetoria Salesiana </h5>
                         <p class="card-text">Responsável pelo desafiador projeto de redesign completo do site da
                             Inspetoria Salesiana Missionária da Amazônia, que estava ativo há mais de 15 anos.
                         <p></p> Este projeto envolveu a modernização de uma plataforma online enraizada em práticas e
@@ -139,7 +157,7 @@
     </section>
 
     <section id="experiencia" class="container mt-5">
-        <h1 class="mb-3">Experiência Profissional</h1>
+        <h1 class="mb-3" style="font-weight: 300; text-align: center;">Experiência Profissional</h1>
         <div class="row">
             <div class="col-md-6">
                 <div class="card bg-dark text-white mb-3">
@@ -153,48 +171,71 @@
             <div class="col-md-6">
                 <div class="card bg-dark text-white mb-3">
                     <div class="card-body">
-                        <h5 class="card-title">Freelancer PJ - Inspetoria Salesiana (Jan/22 - Out/22)</h5>
-                        <p class="card-text">Auxílio no desenvolvimento de projetos web utilizando HTML, CSS e
-                            JavaScript, com foco em responsividade e performance.</p>
+                        <h5 class="card-title">Desenvolvedor Freelancer PJ - ISMA (Jan/22 - Out/22)</h5>
+                        <p class="card-text">Auxílio no desenvolvimento do site institucional web utilizando HTML, CSS e
+                            JavaScript, com foco em responsividade e performance. Responsável pelo desenvolvimento e
+                            manutenção de aplicações web utilizando
+                            PHP, Laravel e MySQL. Contribuições para melhorias de processos e automação.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-
     <section id="contato" class="container mt-5">
-        <div class="container text-rigth bg-dark rounded" style="padding: 3rem;">
-            <h1 class="mb-3 text-center">Contato</h1>
-            <p class="text-center alert alert-warning">Para mais informações ou para discutir possíveis projetos, por
-                favor entre em contato através dos seguintes meios:</p>
-            <div class="row">
-                <div class="col">
-                    <p>Email: felipedgart@gmail.com</p>
-                    <p>WhatsApp: <a href="https://wa.me/92984520381">(92) 98452-0381</a></p>
-                    <p>LinkedIn: <a href="https://www.linkedin.com/in/ofelipearaujo/" target="_blank">Perfil no
-                            LinkedIn</a></p>
-                    <p>GitHub: <a href="https://github.com/felip-araujo" target="_blank">Perfil no GitHub</a></p>
+        <h1 class="mb-3" style="font-weight: 300; text-align: center;">Contato</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="card bg-dark text-white mb-3">
+                    <div class="card-body">
+                        <p style=" margin-top: 1rem;">Olá! Fico muito feliz que você tenha chegado até aqui...  <p>Se gostou do que viu e quer saber mais, tem várias formas de entrar em contato comigo. Sinta-se à vontade para clicar nos botões abaixo e enviar uma mensagem diretamente por e-mail ou WhatsApp. Se preferir, você também pode preencher o formulário de contato ao lado, e eu mesmo entrarei em contato com você. </p> </p>
+                        <p class="label" style="margin-top: 2rem;">Email: felipedgart@gmail.com</p> 
+                        <a href="https://wa.me/92984520381"><button class="btn btn-success" style="margin-bottom: .3rem;"> <i
+                            class="fa-brands fa-whatsapp" style="margin-right: .3rem;"></i> Whatsapp</button></a> 
+                            <a href="https://www.linkedin.com/in/ofelipearaujo/"><button class="btn btn-primary" style="margin-bottom: .3rem;"><i
+                                    class="fa-brands fa-linkedin" style="margin-right: .3rem;"></i>LinkedIn</button></a> 
+                        <a href="https://github.com/felip-araujo"><button class="btn btn-secondary" style="margin-bottom: .3rem;"> <i
+                                    class="fa-brands fa-github" style="margin-right: .3rem;"></i>GitHub</button></a> 
+                        <a href="mailto:felipedgart@gmail.com"><button class="btn btn-danger" style="margin-bottom: .3rem;"> <i class="fa-regular fa-envelope" 
+                                    style="margin-right: .3rem;"></i> Email</button></a> 
+                    </div>
                 </div>
-                <div class="col">
-                    <form action="php/processar_contato.php" method="post" class="" >
-                        <h2 class="form-label text-center">Deixe sua mensagem</h2> 
-                        <label for="nome" class="form-label">Nome</label>
-                        <input type="text" class="form-control" name="nome">
-                        <label for="nome" class="form-label">E-mail:</label>
-                        <input type="email" class="form-control" name="email">
-                        <label for="text" class="form-label">Deixe sua mensagem:</label>
-                        <input type="text" class="form-control" style="padding: 2rem;" name="text" id="text"> 
-                        <button type="submit" class="btn btn-primary" style="margin-top: .8rem;" name="enviar" id="enviar">Enviar</button>
-                    </form>
+            </div>
+            <div class="col-md-6">
+                <div class="card bg-dark text-white mb-3">
+                    <div class="card-body">
+                        <form action="php/processar_contato.php" method="post" class="">
+                            <h4 class="form-label text-center" style="margin-top: .8rem;">Deixe sua mensagem</h4>
+                            <label for="nome" class="form-label">Nome:</label>
+                            <input type="text" class="form-control" name="nome" placeholder="seu nome">
+                            <label for="nome" class="form-label">E-mail:</label>
+                            <input type="email" class="form-control" name="email" placeholder="seuemail@mail.com">
+                            <label for="text" class="form-label">Deixe sua mensagem:</label>
+                            <input type="text" class="form-control" style="padding: 2rem;" name="text" id="text">
+                            <button type="submit" class="btn btn-primary" style="margin-top: .8rem;" name="enviar"
+                                id="enviar">Enviar</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <section>
-        <footer>todos os direitos</footer>
-    </section>
+ 
+    <!-- Footer -->
+<footer class="bg-dark text-light pt-4 pb-2" style="margin-top: .8rem;">
+    <div class="container">
+        <div class="row">
+        <!-- Copyright -->
+        <div class="row">
+            <div class="col-12 text-center mt-2 ">
+                © 2024 Felipe Araujo. <br>Todos os direitos reservados.
+            </div>
+        </div>
+    </div>
+</footer>
+
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://kit.fontawesome.com/d4755c66d3.js" crossorigin="anonymous"></script>
 </body>
 
 </html>
