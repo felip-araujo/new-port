@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <link rel="stylesheet" href="assets/css/style.css"> 
     <link rel="shortcut icon" href="assets/image/profile.png" type="image/x-icon">
-    <title>Portfólio | Felipe Araujo</title>
+    <title> Felipe Araujo | Portfólio </title>
     <style>
         body {
             background-color: #121212;
@@ -27,14 +27,6 @@
             font-size: 24px;
             margin-right: 10px;
         } 
-
-        @media screen and (max-width: 767px)  {
-            .img-fluid.rounded-circle{
-                
-            }
-        }
-
-       
     </style>
 </head>
 
@@ -207,12 +199,13 @@
                         <form action="php/processar_contato.php" method="post" class="">
                             <h4 class="form-label text-center" style="margin-top: .8rem;">Deixe sua mensagem</h4>
                             <label for="nome" class="form-label">Nome:</label>
-                            <input type="text" class="form-control" name="nome" placeholder="seu nome">
+                            <input type="text" class="form-control" name="nome" placeholder="seu nome" required>
                             <label for="nome" class="form-label">E-mail:</label>
-                            <input type="email" class="form-control" name="email" placeholder="seuemail@mail.com">
+                            <input type="email" class="form-control" name="email" placeholder="seuemail@mail.com" required>
                             <label for="text" class="form-label">Deixe sua mensagem:</label>
-                            <input type="text" class="form-control" style="padding: 2rem;" name="text" id="text">
+                            <input type="text" class="form-control" style="padding: 2rem;" name="text" id="text" required> 
                             <button type="submit" class="btn btn-primary" style="margin-top: .8rem;" name="enviar"
+                            
                                 id="enviar">Enviar</button>
                         </form>
                     </div>
