@@ -1,7 +1,7 @@
 <?php
 $token = 'EAAX18cjhv40BOZBZARVdp4VTdwy9pJZBoy2hAVqA0v2bq2wrRyx6FvjCnjEcmy85QfZCQjgJKvNQaklwSKbojrZCKqOI1TTmfj6L12h1FKQYLPNihmsj6Ca6ykFBKRnu61ehrYUq4kyIJjdN8VlgQAi65Wlk7SVZAL7TjqKgX4BcXtkQmy65SnyvKJSTTRZCDQGMydBmSJXZAuEdhHelglql';
 $phoneNumberId = '+1 555 099 8429';
-$recipientPhoneNumber = '+5592984520381';
+$recipientPhoneNumber = '+55 92 984520381';
 $message = 'teste';
 
 $url = "https://graph.facebook.com/v12.0/$phoneNumberId/messages";
