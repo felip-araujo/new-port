@@ -5,26 +5,23 @@ $('#erro').hide();
 document.getElementById("formulario").addEventListener('submit', function (event) {
     event.preventDefault();
 
-    const formData = new formData(this);
 
+    const formData = $(this).serialize();
+    
     $.ajax({
         type: "POST",
-        url: "./assets/php/processar_contato.php",
+        url: "../new-port/php/processar_contato.php",
         data: formData,
-        processData: false,
-        contentType: false,
         success: function (response) {
-            $('#sucesso').show();
-            $('#sucesso').html(response);
+            $('#sucesso').show().html(response);  
             $('#erro').hide();
-        },
+        }, 
         error: function (response) {
-            $('#erro').show();
-            $('#erro').html(response);
+            $('#erro').show().html(response);  
             $('#sucesso').hide();
         }
-
     });
+
 })
 
 

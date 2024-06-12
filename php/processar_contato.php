@@ -1,64 +1,56 @@
-<?php  
-
-
 <?php
 
-// incluir a funcionalidade do recaptcha
-require_once "recaptchalib.php";
+require '../vendor/autoload.php';
 
-// definir a chave secreta
-$secret = "INSIRA-AQUI-A-CHAVE-SECRETA";
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
-// verificar a chave secreta
-$response = null;
-$reCaptcha = new ReCaptcha($secret);
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    require 'conexao.php';
+    $dataAtual = date('Y-m-d');
+    $nome = $_POST['nome'] ?? null;
+    $email = $_POST['email'] ?? null;
+    $mensagem = $_POST['text'] ?? null;
 
-if ($_POST["g-recaptcha-response"]) {
-    $response = $reCaptcha->verifyResponse($_SERVER["REMOTE_ADDR"], $_POST["g-recaptcha-response"]);
+    $stmt = $pdo->prepare("INSERT INTO formulario_contato (nome, email, mensagem_enviada) VALUES (:nome, :email, :mensagem_enviada)");
+    $stmt->bindParam(':nome', $nome);
+    $stmt->bindParam(':email', $email);
+    $stmt->bindParam(':mensagem_enviada', $mensagem);
+    if ($stmt->execute()) {
+        echo "Muito obrigado pelo contato, retornarei em breve! " . '<a href="https://wa.me/92984520381"> ou clique aqui para falar no whatsapp</a>';
+
+        $mail = new PHPMailer(true);
+
+        try {
+            // Configurações do servidor
+            $mail->isSMTP();
+            $mail->Host       = 'smtp.titan.email'; // Substitua pelo seu host SMTP
+            $mail->SMTPAuth   = true;
+            $mail->Username   = 'felp@evoludesign.com.br'; // Substitua pelo seu email
+            $mail->Password   = 'feijaoearroz1'; // Substitua pela sua senha
+            $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
+            $mail->Port       = 587;
+
+            // Destinatários
+            $mail->setFrom('felp@evoludesign.com.br', 'Felipe'); // Substitua pelo seu email e nome
+            $mail->addAddress('felp@evoludesign.com.br'); // Envie para o seu próprio email
+
+            // Conteúdo do email
+            $mail->isHTML(true);
+            $mail->Subject = 'Dados do Formulário' . $dataAtual;
+            $mail->Body    = "Nome: $nome<br>Email: $email<br>Mensagem: $mensagem";
+            $mail->AltBody = "Nome: $nome\nEmail: $email\nMensagem: $mensagem";
+
+            // Envia o email
+            $mail->send();
+            
+        } catch (Exception $e) {
+            echo "Erro ao enviar email: {$mail->ErrorInfo}";
+        }
+
+    } else {
+        echo "Erro ao enviar formulário";
+    }
+} else {
+    echo   'Método de requisiçãoo inválido!';
 }
-
-// deu tudo certo?
-if ($response != null && $response->success) {
-    // processar o formulario
-}
-
-
-
-if($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $nome = isset($_POST['nome']) ? $_POST['nome'] : ''; 
-    $email = isset($_POST['email']) ? $_POST['email'] : '';
-
-    echo "Dados recebidos"; 
-
-} 
-
-else {
-    http_response_code(400); 
-    echo "mmetodo de requisicao invalido"; 
-}
-
-
-
-    // if(isset($_POST['enviar'])){
-
-    //     require 'conexao.php';
-    //     $nome = $_POST['nome'];
-    //     $email = $_POST['email'];
-    //     $mensagem_enviada = $_POST['text'];  
-
-        
-         
-    //     $sql = $pdo->prepare("INSERT INTO formulario_contato (nome, email, mensagem_enviada) VALUES (:nome, :email, :mensagem_enviada)");
-    //     $sql->bindParam(':nome', $nome);
-    //     $sql->bindParam(':email', $email);
-    //     $sql->bindParam(':mensagem_enviada', $mensagem_enviada);
-
-    //     if($sql->execute()){
-    //         echo '<script>alert("Mensagem Enviada")</script>';
-    //         echo '<script>window.location.href="../index.html#contato"</script>' ;
-    //     } else {
-    //         echo " Erro ao enviar sua mensagem";
-    //     }
-    // }
-
-?> 
