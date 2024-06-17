@@ -27,7 +27,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $mail->Host       = 'smtp.titan.email'; // Substitua pelo seu host SMTP
             $mail->SMTPAuth   = true;
             $mail->Username   = 'felp@evoludesign.com.br'; // Substitua pelo seu email
-            $mail->Password   = 'feijaoearroz1'; // Substitua pela sua senha
+            $mail->Password   = 'Fe159753#'; // Substitua pela sua senha
             $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
             $mail->Port       = 587;
 
@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             // Conteúdo do email
             $mail->isHTML(true);
-            $mail->Subject = 'Dados do Formulário' . $dataAtual;
+            $mail->Subject = 'Dados do Formulario' . ' | ' . $dataAtual;
             $mail->Body    = "Nome: $nome<br>Email: $email<br>Mensagem: $mensagem";
             $mail->AltBody = "Nome: $nome\nEmail: $email\nMensagem: $mensagem";
 
