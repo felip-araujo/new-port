@@ -10,7 +10,7 @@ document.getElementById("formulario").addEventListener('submit', function (event
     
     $.ajax({
         type: "POST",
-        url: "../php/processar_contato.php",
+        url: "/home1/evolud85/public_html/felipe/php/processar_contato.php",
         data: formData,
         success: function (response) {
             $('#sucesso').show().html(response);  
