@@ -1,8 +1,8 @@
 <?php
-require '/felipe/vendor/autoload.php';
+require './vendor/autoload.php';
 
-use felipe\vendor\PHPMailer\PHPMailer\PHPMailer;
-use felipe\vendor\PHPMailer\PHPMailer\Exception;
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     require 'conexao.php';
