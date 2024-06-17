@@ -43,7 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             if ($mail->send()) {
                 echo "Muito obrigado pelo contato, retornarei em breve! " . '<a href="https://wa.me/92984520381"> ou clique aqui para falar no whatsapp</a>';
             } else {
-                echo "Erro ao enviar email: {$mail->ErrorInfo}";
+                echo "Erro ao enviar email";
             }
         } catch (Exception $e) {
             echo "Erro ao enviar email: {$mail->ErrorInfo}";
